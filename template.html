@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="${lang}" dir="${dir}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${title}</title>
+    <meta name="description" content="${meta_description}">
+    <meta name="keywords" content="${meta_keywords}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="${canonical_url}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="${og_title}">
+    <meta property="og:description" content="${og_description}">
+    <meta property="og:locale" content="${og_locale}">
+    <meta property="og:url" content="${canonical_url}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${og_title}">
+    <meta name="twitter:description" content="${og_description}">
+
+    ${hreflang_tags}
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "${nav_title}",
+        "description": "${meta_description}",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .lang-switch {
+            position: relative;
+        }
+        .lang-switch select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            padding-right: 28px;
+        }
+
+        .ad-slot {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border: 1px dashed #e2e8f0;
+            border-radius: 8px;
+            color: #94a3b8;
+            font-size: 12px;
+            margin: 12px 0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body.dark-theme { }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-800 font-sans antialiased flex flex-col">
+
+    <!-- 顶部导航栏 -->
+    <header class="bg-white shadow-sm border-b border-gray-200 py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-indigo-600">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+                <h1 class="text-xl font-bold tracking-tight">${nav_title}</h1>
+            </div>
+            <div class="flex items-center gap-3">
+                <p class="text-sm text-gray-500 hidden sm:block">${nav_sub}</p>
+                <div class="lang-switch">
+                    <select id="lang-select" class="border-gray-300 rounded-lg text-gray-700 py-1.5 pl-3 pr-8 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none border bg-gray-50 text-sm font-medium cursor-pointer">
+                        <option value="zh" ${lang_sel_zh}>中文</option>
+                        <option value="en" ${lang_sel_en}>English</option>
+                        <option value="ja" ${lang_sel_ja}>日本語</option>
+                        <option value="ko" ${lang_sel_ko}>한국어</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-6 flex flex-col gap-6">
+
+        <!-- 顶部广告位 -->
+        <div class="ad-slot" id="ad-top">Advertisement</div>
+
+        <!-- 格式选择面板 -->
+        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="flex items-center gap-2 text-gray-700 font-medium">
+                <i data-lucide="settings-2" class="w-5 h-5 text-indigo-500"></i>
+                <span>${panel_format_label}</span>
+            </div>
+            <select id="target-format" class="w-full sm:w-auto border-gray-300 rounded-lg text-gray-700 py-2 pl-3 pr-10 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none border bg-gray-50 font-medium cursor-pointer transition-shadow">
+                <option value="txt">${format_txt}</option>
+                <option value="srt">${format_srt}</option>
+                <option value="vtt">${format_vtt}</option>
+                <option value="lrc">${format_lrc}</option>
+                <option value="ass">${format_ass}</option>
+                <option value="sbv">${format_sbv}</option>
+            </select>
+        </div>
+
+        <!-- 上传区域 -->
+        <div id="drop-zone" class="relative border-2 border-dashed border-indigo-300 rounded-xl bg-indigo-50/50 hover:bg-indigo-50 transition-colors p-8 text-center cursor-pointer group">
+            <input type="file" id="file-input" accept=".srt,.vtt,.ass,.ssa,.lrc,.sbv,.sub,.txt" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+            <div class="flex flex-col items-center justify-center gap-3">
+                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <i data-lucide="upload-cloud" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <p class="text-lg font-medium text-gray-700">${dropzone_title}</p>
+                    <p class="text-sm text-gray-500 mt-1">${dropzone_sub}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结果区 -->
+        <div id="result-section" class="hidden flex-col gap-4">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-white p-4 rounded-lg shadow-sm border border-gray-200 gap-4">
+                <div class="flex items-center gap-3 overflow-hidden">
+                    <div class="p-2 bg-green-100 text-green-600 rounded-lg shrink-0">
+                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                    </div>
+                    <div class="truncate">
+                        <p id="file-name" class="font-medium text-gray-800 truncate">filename.srt</p>
+                        <p id="file-stats" class="text-xs text-gray-500">${result_subtitle}</p>
+                    </div>
+                </div>
+                <div class="flex gap-2 w-full sm:w-auto">
+                    <button id="copy-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                        <span>${copy_btn}</span>
+                    </button>
+                    <button id="download-btn" class="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 shadow-sm transition-colors text-sm font-medium">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span id="download-text">${download_btn_txt}</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                <div class="bg-gray-50 border-b border-gray-200 px-4 py-2 flex justify-between items-center">
+                    <span class="text-sm font-medium text-gray-600">${preview_label}</span>
+                </div>
+                <textarea id="text-preview" class="w-full h-96 p-4 outline-none resize-y text-gray-700 leading-relaxed bg-white font-mono text-sm" spellcheck="false" placeholder=""></textarea>
+            </div>
+        </div>
+
+        <!-- 底部广告位 -->
+        <div class="ad-slot" id="ad-bottom">Advertisement</div>
+    </main>
+
+    <footer class="text-center py-6 text-sm text-gray-400">
+        <p>${footer}</p>
+    </footer>
+
+    <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-2">
+        <i data-lucide="info" class="w-4 h-4"></i>
+        <span id="toast-msg"></span>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const i18n = ${i18n_json};
+
+        const fileInput = document.getElementById('file-input');
+        const dropZone = document.getElementById('drop-zone');
+        const resultSection = document.getElementById('result-section');
+        const fileNameDisplay = document.getElementById('file-name');
+        const fileStatsDisplay = document.getElementById('file-stats');
+        const textPreview = document.getElementById('text-preview');
+        const downloadBtn = document.getElementById('download-btn');
+        const downloadText = document.getElementById('download-text');
+        const copyBtn = document.getElementById('copy-btn');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-msg');
+        const targetFormatSelect = document.getElementById('target-format');
+        const langSelect = document.getElementById('lang-select');
+
+        let currentOriginalFileName = '';
+        let currentSubtitles = [];
+
+        function showToast(msg) {
+            toastMsg.textContent = i18n[msg] || msg;
+            toast.classList.remove('opacity-0');
+            setTimeout(() => toast.classList.add('opacity-0'), 3000);
+        }
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, e => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (eventName === 'dragenter' || eventName === 'dragover') {
+                    dropZone.classList.add('border-indigo-500', 'bg-indigo-100');
+                } else {
+                    dropZone.classList.remove('border-indigo-500', 'bg-indigo-100');
+                }
+            });
+        });
+
+        dropZone.addEventListener('drop', e => handleFiles(e.dataTransfer.files));
+        fileInput.addEventListener('change', function() { handleFiles(this.files); });
+
+        targetFormatSelect.addEventListener('change', () => {
+            if (currentSubtitles.length > 0) {
+                renderOutput();
+                showToast('toast_switched');
+            }
+        });
+
+        langSelect.addEventListener('change', () => {
+            const lang = langSelect.value;
+            window.location.href = lang + '.html';
+        });
+
+        function handleFiles(files) {
+            if (files.length === 0) return;
+            const file = files[0];
+            currentOriginalFileName = file.name.replace(/\.[^/.]+$/, '');
+            fileNameDisplay.textContent = file.name;
+            const reader = new FileReader();
+            reader.readAsText(file, 'UTF-8');
+            reader.onload = function(e) {
+                const content = e.target.result;
+                const ext = file.name.split('.').pop().toLowerCase();
+                try {
+                    currentSubtitles = parseSubtitles(content, ext);
+                    if (currentSubtitles.length === 0) { showToast('toast_no_subtitle'); return; }
+                    renderOutput();
+                    fileStatsDisplay.textContent = `✅ ${currentSubtitles.length} ${i18n.file_items || 'items'}`;
+                    resultSection.classList.remove('hidden');
+                    resultSection.classList.add('flex');
+                    showToast('toast_success');
+                    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } catch (err) {
+                    console.error(err);
+                    showToast('toast_parse_error');
+                }
+            };
+            reader.onerror = function() { showToast('toast_read_fail'); };
+        }
+
+        function parseSubtitles(text, ext) {
+            text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+            if (ext === 'srt' || ext === 'vtt') return parseSRTorVTT(text);
+            if (ext === 'ass' || ext === 'ssa') return parseASS(text);
+            if (ext === 'lrc') return parseLRC(text);
+            if (ext === 'sbv') return parseSBV(text);
+            if (text.includes('-->')) return parseSRTorVTT(text);
+            if (text.includes('[Script Info]')) return parseASS(text);
+            if (/\[\d{2}:\d{2}\.\d{2,3}\]/.test(text)) return parseLRC(text);
+            const lines = text.split('\n').filter(l => l.trim() !== '');
+            return lines.map((line, idx) => ({
+                start: idx * 2000, end: (idx + 1) * 2000, text: line.trim()
+            }));
+        }
+
+        function timeToMs(timeStr) {
+            let parts = timeStr.replace(',', '.').split(':');
+            let hours = 0, minutes = 0, seconds = 0, ms = 0;
+            if (parts.length === 3) {
+                hours = parseInt(parts[0], 10);
+                minutes = parseInt(parts[1], 10);
+                let secParts = parts[2].split('.');
+                seconds = parseInt(secParts[0], 10);
+                ms = secParts[1] ? parseInt((secParts[1] + '000').substring(0, 3), 10) : 0;
+            } else if (parts.length === 2) {
+                minutes = parseInt(parts[0], 10);
+                let secParts = parts[1].split('.');
+                seconds = parseInt(secParts[0], 10);
+                ms = secParts[1] ? parseInt((secParts[1] + '000').substring(0, 3), 10) : 0;
+            }
+            return (hours * 3600 + minutes * 60 + seconds) * 1000 + ms;
+        }
+
+        function parseSRTorVTT(text) {
+            const blocks = text.split(/\n\s*\n/);
+            const subs = [];
+            const timeRegex = /((?:\d{1,2}:)?\d{2}:\d{2}[.,]\d{2,3})\s*-->\s*((?:\d{1,2}:)?\d{2}:\d{2}[.,]\d{2,3})/;
+            for (let block of blocks) {
+                const lines = block.split('\n');
+                let timeLineIdx = -1;
+                for (let i = 0; i < lines.length; i++) {
+                    if (timeRegex.test(lines[i])) { timeLineIdx = i; break; }
+                }
+                if (timeLineIdx !== -1) {
+                    const match = lines[timeLineIdx].match(timeRegex);
+                    const start = timeToMs(match[1]);
+                    const end = timeToMs(match[2]);
+                    const subText = lines.slice(timeLineIdx + 1).join('\n').replace(/<[^>]+>/g, '').trim();
+                    if (subText) subs.push({ start, end, text: subText });
+                }
+            }
+            return subs;
+        }
+
+        function parseASS(text) {
+            const lines = text.split('\n');
+            const subs = [];
+            let formatCols = [];
+            for (let line of lines) {
+                if (line.startsWith('Format:')) {
+                    formatCols = line.substring(7).trim().split(',').map(s => s.trim().toLowerCase());
+                } else if (line.startsWith('Dialogue:')) {
+                    const data = line.substring(9).trim().split(',');
+                    const limit = formatCols.length - 1;
+                    const mainData = data.slice(0, limit);
+                    const textData = data.slice(limit).join(',');
+                    const startIdx = formatCols.indexOf('start');
+                    const endIdx = formatCols.indexOf('end');
+                    const textIdx = formatCols.indexOf('text');
+                    if (startIdx !== -1 && endIdx !== -1) {
+                        let subText = textIdx === formatCols.length - 1 ? textData : mainData[textIdx];
+                        subText = subText.replace(/\{[^}]+\}/g, '').replace(/\\N/gi, '\n');
+                        subs.push({ start: timeToMs(mainData[startIdx]), end: timeToMs(mainData[endIdx]), text: subText.trim() });
+                    }
+                }
+            }
+            return subs.sort((a, b) => a.start - b.start);
+        }
+
+        function parseLRC(text) {
+            const lines = text.split('\n');
+            const subs = [];
+            const timeRegex = /\[(\d{2}:\d{2}\.\d{2,3})\](.*)/;
+            for (let line of lines) {
+                const match = line.match(timeRegex);
+                if (match) {
+                    const start = timeToMs(match[1]);
+                    const subText = match[2].trim();
+                    if (subText) subs.push({ start, end: start + 3000, text: subText });
+                }
+            }
+            for (let i = 0; i < subs.length - 1; i++) subs[i].end = subs[i+1].start;
+            return subs;
+        }
+
+        function parseSBV(text) {
+            const blocks = text.split(/\n\s*\n/);
+            const subs = [];
+            for (let block of blocks) {
+                const lines = block.split('\n');
+                if (lines.length >= 2 && lines[0].includes(',')) {
+                    const times = lines[0].split(',');
+                    if (times.length === 2) {
+                        const start = timeToMs(times[0]);
+                        const end = timeToMs(times[1]);
+                        const subText = lines.slice(1).join('\n').trim();
+                        if (subText) subs.push({ start, end, text: subText });
+                    }
+                }
+            }
+            return subs;
+        }
+
+        function formatTime(ms, formatStr) {
+            const date = new Date(ms);
+            const h = Math.floor(ms / 3600000);
+            const m = date.getUTCMinutes();
+            const s = date.getUTCSeconds();
+            const millis = date.getUTCMilliseconds();
+            const pad2 = num => num.toString().padStart(2, '0');
+            const pad3 = num => num.toString().padStart(3, '0');
+            if (formatStr === 'srt') return `${pad2(h)}:${pad2(m)}:${pad2(s)},${pad3(millis)}`;
+            if (formatStr === 'vtt') return `${pad2(h)}:${pad2(m)}:${pad2(s)}.${pad3(millis)}`;
+            if (formatStr === 'ass') return `${h}:${pad2(m)}:${pad2(s)}.${pad2(Math.floor(millis/10))}`;
+            if (formatStr === 'lrc') return `${pad2(h*60 + m)}:${pad2(s)}.${pad2(Math.floor(millis/10))}`;
+            if (formatStr === 'sbv') return `${h}:${pad2(m)}:${pad2(s)}.${pad3(millis)}`;
+            return '';
+        }
+
+        function renderOutput() {
+            const format = targetFormatSelect.value;
+            let outputText = '';
+            switch (format) {
+                case 'txt':
+                    outputText = currentSubtitles.map(s => s.text).join('\n');
+                    downloadText.textContent = i18n.download_txt;
+                    break;
+                case 'srt':
+                    outputText = currentSubtitles.map((s, i) => `${i + 1}\n${formatTime(s.start, 'srt')} --> ${formatTime(s.end, 'srt')}\n${s.text}`).join('\n\n');
+                    downloadText.textContent = i18n.download_srt;
+                    break;
+                case 'vtt':
+                    outputText = 'WEBVTT\n\n' + currentSubtitles.map(s => `${formatTime(s.start, 'vtt')} --> ${formatTime(s.end, 'vtt')}\n${s.text}`).join('\n\n');
+                    downloadText.textContent = i18n.download_vtt;
+                    break;
+                case 'ass':
+                    outputText = `[Script Info]\nTitle: Converted Subtitles\nScriptType: v4.00+\nWrapStyle: 0\nScaledBorderAndShadow: yes\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\nStyle: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n`;
+                    outputText += currentSubtitles.map(s => `Dialogue: 0,${formatTime(s.start, 'ass')},${formatTime(s.end, 'ass')},Default,,0,0,0,,${s.text.replace(/\n/g, '\\N')}`).join('\n');
+                    downloadText.textContent = i18n.download_ass;
+                    break;
+                case 'lrc':
+                    outputText = currentSubtitles.map(s => `[${formatTime(s.start, 'lrc')}]${s.text.replace(/\n/g, ' ')}`).join('\n');
+                    downloadText.textContent = i18n.download_lrc;
+                    break;
+                case 'sbv':
+                    outputText = currentSubtitles.map(s => `${formatTime(s.start, 'sbv')},${formatTime(s.end, 'sbv')}\n${s.text}`).join('\n\n');
+                    downloadText.textContent = i18n.download_sbv;
+                    break;
+            }
+            textPreview.value = outputText;
+        }
+
+        copyBtn.addEventListener('click', () => {
+            textPreview.select();
+            try {
+                document.execCommand('copy');
+                showToast('toast_copied');
+            } catch (err) {
+                showToast('toast_copy_fail');
+            }
+            window.getSelection().removeAllRanges();
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const format = targetFormatSelect.value;
+            const blob = new Blob([textPreview.value], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', `${currentOriginalFileName}_converted.${format}`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

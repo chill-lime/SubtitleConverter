@@ -1,0 +1,47 @@
+{
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "title": "字幕格式转换器 - SRT/VTT/ASS 互转 TXT/MP3",
+  "meta_description": "免费在线字幕格式转换工具。支持 SRT、VTT、ASS、SSA、LRC、SBV 等格式互转，纯本地运行，安全高效。",
+  "meta_keywords": "SRT转TXT,字幕转换器,VTT转SRT,ASS转TXT,LRC转换器,在线字幕工具",
+  "og_title": "字幕格式转换器 - 免费在线工具",
+  "og_description": "支持 SRT、VTT、ASS、SSA、LRC、SBV 等多种字幕格式互转，纯前端本地运行，保护隐私。",
+
+  "nav_title": "字幕格式转换器",
+  "nav_sub": "纯本地运行 · 支持多格式互相转换",
+
+  "panel_format_label": "选择目标转换格式：",
+  "format_txt": "TXT (纯文本，去除时间轴)",
+  "format_srt": "SRT (标准字幕)",
+  "format_vtt": "WebVTT (网页字幕)",
+  "format_lrc": "LRC (歌词文件)",
+  "format_ass": "ASS / SSA (特效字幕)",
+  "format_sbv": "SBV (YouTube 字幕)",
+
+  "dropzone_title": "点击上传或将字幕文件拖拽到此处",
+  "dropzone_sub": "自动识别 SRT、VTT、ASS、SSA、LRC、SBV 等多种格式",
+
+  "result_subtitle": "转换成功",
+  "copy_btn": "复制",
+  "download_btn_txt": "下载文件",
+  "preview_label": "文本预览（可编辑）",
+
+  "footer": "纯前端运行 · 无需联网上传 · 安全高效",
+
+  "toast_switched": "已切换预览格式",
+  "toast_success": "文件识别与转换成功！",
+  "toast_copied": "文本已复制到剪贴板",
+  "toast_copy_fail": "复制失败，请手动全选复制",
+  "toast_no_subtitle": "未检测到有效的时间轴或字幕内容！",
+  "toast_parse_error": "解析文件出错，请确保字幕格式正确。",
+  "toast_read_fail": "读取文件失败，请重试。",
+
+  "download_txt": "下载 TXT",
+  "download_srt": "下载 SRT",
+  "download_vtt": "下载 VTT",
+  "download_ass": "下载 ASS",
+  "download_lrc": "下载 LRC",
+  "download_sbv": "下载 SBV",
+
+  "lang_switch_label": "语言"
+}

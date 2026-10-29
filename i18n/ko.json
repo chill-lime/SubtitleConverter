@@ -1,0 +1,47 @@
+{
+  "lang": "ko",
+  "dir": "ltr",
+  "title": "자막 형식 변환기 - SRT/VTT/ASS 를 TXT 등으로 변환",
+  "meta_description": "무료 온라인 자막 변환 도구. SRT, VTT, ASS, SSA, LRC, SBV 등 형식 상호 변환. 브라우저 내에서만 처리되어 안전하고 빠릅니다.",
+  "meta_keywords": "SRT to TXT,자막 변환,VTT to SRT,ASS 변환,LRC 변환,온라인 자막 도구",
+  "og_title": "자막 형식 변환기 - 무료 온라인 도구",
+  "og_description": "SRT, VTT, ASS, SSA, LRC, SBV 등 다양한 자막 형식 지원. 파일은 브라우저를 벗어나지 않아 개인정보 보호.",
+
+  "nav_title": "자막 변환기",
+  "nav_sub": "로컬 실행 · 다중 형식 지원",
+
+  "panel_format_label": "출력 형식 선택:",
+  "format_txt": "TXT (일반 텍스트, 타임스탬프 없음)",
+  "format_srt": "SRT (표준 자막)",
+  "format_vtt": "WebVTT (웹 자막)",
+  "format_lrc": "LRC (가사 파일)",
+  "format_ass": "ASS / SSA (스타일 자막)",
+  "format_sbv": "SBV (YouTube 자막)",
+
+  "dropzone_title": "클릭하거나 드래그하여 자막 파일 업로드",
+  "dropzone_sub": "SRT, VTT, ASS, SSA, LRC, SBV 등 자동 인식",
+
+  "result_subtitle": "변환 성공",
+  "copy_btn": "복사",
+  "download_btn_txt": "파일 다운로드",
+  "preview_label": "미리보기 (편집 가능)",
+
+  "footer": "순수 프론트엔드 · 업로드 불필요 · 안전하고 빠름",
+
+  "toast_switched": "미리보기 형식이 변경되었습니다",
+  "toast_success": "파일 인식 및 변환 완료!",
+  "toast_copied": "클립보드에 복사되었습니다",
+  "toast_copy_fail": "복사 실패. 수동으로 선택하여 복사해 주세요.",
+  "toast_no_subtitle": "유효한 타임스탬프 또는 자막 내용이 감지되지 않았습니다!",
+  "toast_parse_error": "파싱 오류. 자막 형식이 올바른지 확인해 주세요.",
+  "toast_read_fail": "파일 읽기에 실패했습니다. 다시 시도해 주세요.",
+
+  "download_txt": "TXT 다운로드",
+  "download_srt": "SRT 다운로드",
+  "download_vtt": "VTT 다운로드",
+  "download_ass": "ASS 다운로드",
+  "download_lrc": "LRC 다운로드",
+  "download_sbv": "SBV 다운로드",
+
+  "lang_switch_label": "언어"
+}

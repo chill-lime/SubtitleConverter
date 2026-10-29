@@ -1,0 +1,47 @@
+{
+  "lang": "ja",
+  "dir": "ltr",
+  "title": "字幕フォーマット変換ツール - SRT/VTT/ASS を TXT などに変換",
+  "meta_description": "無料オンライン字幕変換ツール。SRT、VTT、ASS、SSA、LRC、SBV などのフォーマットを相互変換。すべてブラウザ内で処理されるので安全で高速。",
+  "meta_keywords": "SRT を TXT,字幕変換,VTT を SRT,ASS 変換,LRC 変換,オンライン字幕ツール",
+  "og_title": "字幕フォーマット変換ツール - 無料オンラインツール",
+  "og_description": "SRT、VTT、ASS、SSA、LRC、SBV など多様な字幕フォーマットに対応。ファイルはブラウザから出ないのでプライバシー安心。",
+
+  "nav_title": "字幕変換ツール",
+  "nav_sub": "ローカル実行 · マルチフォーマット対応",
+
+  "panel_format_label": "出力フォーマットを選択：",
+  "format_txt": "TXT（プレーンテキスト、タイムスタンプなし）",
+  "format_srt": "SRT（標準字幕）",
+  "format_vtt": "WebVTT（Web字幕）",
+  "format_lrc": "LRC（歌詞ファイル）",
+  "format_ass": "ASS / SSA（装飾字幕）",
+  "format_sbv": "SBV（YouTube 字幕）",
+
+  "dropzone_title": "クリックまたはドラッグして字幕ファイルをアップロード",
+  "dropzone_sub": "SRT、VTT、ASS、SSA、LRC、SBV などを自動認識",
+
+  "result_subtitle": "変換成功",
+  "copy_btn": "コピー",
+  "download_btn_txt": "ダウンロード",
+  "preview_label": "プレビュー（編集可能）",
+
+  "footer": "純フロントエンド · アップロード不要 · 安全高速",
+
+  "toast_switched": "プレビュー形式を切り替えました",
+  "toast_success": "ファイルを認識して変換しました！",
+  "toast_copied": "クリップボードにコピーしました",
+  "toast_copy_fail": "コピーに失敗しました。手動で選択してコピーしてください。",
+  "toast_no_subtitle": "有効なタイムスタンプまたは字幕内容が検出されません！",
+  "toast_parse_error": "解析エラー。字幕フォーマットが正しいか確認してください。",
+  "toast_read_fail": "ファイルの読み取りに失敗しました。もう一度お試しください。",
+
+  "download_txt": "TXT をダウンロード",
+  "download_srt": "SRT をダウンロード",
+  "download_vtt": "VTT をダウンロード",
+  "download_ass": "ASS をダウンロード",
+  "download_lrc": "LRC をダウンロード",
+  "download_sbv": "SBV をダウンロード",
+
+  "lang_switch_label": "言語"
+}

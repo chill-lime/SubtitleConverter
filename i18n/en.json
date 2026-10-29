@@ -1,0 +1,47 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "title": "Subtitle Format Converter - SRT/VTT/ASS to TXT and More",
+  "meta_description": "Free online subtitle converter. Convert between SRT, VTT, ASS, SSA, LRC, SBV formats. Runs entirely in your browser — secure, fast, no uploads.",
+  "meta_keywords": "SRT to TXT,subtitle converter,VTT to SRT,ASS converter,LRC converter,online subtitle tool",
+  "og_title": "Subtitle Format Converter - Free Online Tool",
+  "og_description": "Convert SRT, VTT, ASS, SSA, LRC, SBV and more. Pure frontend, local processing, your files never leave your browser.",
+
+  "nav_title": "Subtitle Converter",
+  "nav_sub": "Runs locally · Multi-format support",
+
+  "panel_format_label": "Choose output format:",
+  "format_txt": "TXT (Plain text, no timestamps)",
+  "format_srt": "SRT (Standard subtitles)",
+  "format_vtt": "WebVTT (Web subtitles)",
+  "format_lrc": "LRC (Lyrics file)",
+  "format_ass": "ASS / SSA (Styled subtitles)",
+  "format_sbv": "SBV (YouTube subtitles)",
+
+  "dropzone_title": "Click or drag subtitle files here to upload",
+  "dropzone_sub": "Auto-detects SRT, VTT, ASS, SSA, LRC, SBV and more",
+
+  "result_subtitle": "Conversion successful",
+  "copy_btn": "Copy",
+  "download_btn_txt": "Download file",
+  "preview_label": "Text preview (editable)",
+
+  "footer": "Pure frontend · No uploads needed · Secure & fast",
+
+  "toast_switched": "Switched preview format",
+  "toast_success": "File recognized and converted!",
+  "toast_copied": "Text copied to clipboard",
+  "toast_copy_fail": "Copy failed. Please select and copy manually.",
+  "toast_no_subtitle": "No valid timestamps or subtitle content detected!",
+  "toast_parse_error": "Parse error. Please make sure the subtitle format is correct.",
+  "toast_read_fail": "Failed to read file. Please try again.",
+
+  "download_txt": "Download TXT",
+  "download_srt": "Download SRT",
+  "download_vtt": "Download VTT",
+  "download_ass": "Download ASS",
+  "download_lrc": "Download LRC",
+  "download_sbv": "Download SBV",
+
+  "lang_switch_label": "Language"
+}
