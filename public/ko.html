@@ -70,6 +70,30 @@
             margin: 12px 0;
         }
 
+        .ad-sidebar {
+            display: none;
+        }
+        @media (min-width: 1200px) {
+            .ad-sidebar {
+                display: block;
+                position: fixed;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 160px;
+                z-index: 10;
+                pointer-events: auto;
+            }
+            .ad-sidebar-left { left: 16px; }
+            .ad-sidebar-right { right: 16px; }
+            .ad-sidebar .ad-label {
+                font-size: 11px;
+                color: #94a3b8;
+                text-align: center;
+                margin-top: 6px;
+                letter-spacing: 0.5px;
+            }
+        }
+
         @media (prefers-color-scheme: dark) {
             body.dark-theme { }
         }
@@ -501,5 +525,17 @@
             URL.revokeObjectURL(url);
         });
     </script>
+        <!-- 左侧悬挂广告位（≥1200px 才显示） -->
+        <aside class="ad-sidebar ad-sidebar-left">
+            <div id="ad-sidebar-left"></div>
+            <div class="ad-label">광고</div>
+        </aside>
+
+        <!-- 右侧悬挂广告位（≥1200px 才显示） -->
+        <aside class="ad-sidebar ad-sidebar-right">
+            <div id="ad-sidebar-right"></div>
+            <div class="ad-label">광고</div>
+        </aside>
+
 </body>
 </html>
