@@ -171,6 +171,23 @@
     </div>
 
     <script>
+        (function() {
+            var path = window.location.pathname;
+            var isRoot = path === '/' || path === '/index.html' || path === '';
+            var saved = localStorage.getItem('preferred_lang');
+            if (saved && saved !== 'zh' && isRoot) {
+                window.location.replace(saved + '.html');
+                return;
+            }
+            if (!saved && isRoot) {
+                var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+                if (nav.startsWith('zh')) {}
+                else if (nav.startsWith('en')) { window.location.replace('en.html'); return; }
+                else if (nav.startsWith('ja')) { window.location.replace('ja.html'); return; }
+                else if (nav.startsWith('ko')) { window.location.replace('ko.html'); return; }
+            }
+        })();
+
         lucide.createIcons();
 
         const i18n = ${i18n_json};
@@ -220,9 +237,11 @@
             }
         });
 
+        const langHrefMap = { zh: '/', en: 'en.html', ja: 'ja.html', ko: 'ko.html' };
         langSelect.addEventListener('change', () => {
             const lang = langSelect.value;
-            window.location.href = lang + '.html';
+            localStorage.setItem('preferred_lang', lang);
+            window.location.href = langHrefMap[lang] || '/';
         });
 
         function handleFiles(files) {
