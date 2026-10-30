@@ -41,5 +41,7 @@
   "hero_subtitle": "支持 SRT、VTT、ASS、SSA、LRC、SBV 等多种格式互转，所有转换在浏览器本地完成，绝不上传文件。",
   "badge_free": "100% 免费",
   "badge_nosignup": "无需注册",
-  "badge_private": "隐私安全"
+  "badge_private": "隐私安全",
+  "ad_label_i18n": "赞助广告",
+  "ad_disclaimer_i18n": "广告内容与本站无关，请注意甄别"
 }

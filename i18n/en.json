@@ -41,5 +41,7 @@
   "hero_subtitle": "Convert SRT, VTT, ASS, SSA, LRC, SBV and more. Everything runs locally in your browser — no file uploads ever.",
   "badge_free": "100% Free",
   "badge_nosignup": "No Signup",
-  "badge_private": "Private & Secure"
+  "badge_private": "Private & Secure",
+  "ad_label_i18n": "Sponsored",
+  "ad_disclaimer_i18n": "Advertisement · not affiliated with this site"
 }

@@ -54,15 +54,29 @@
         }
 
         .ad-container {
-            margin: 16px 0 8px;
+            margin-top: 32px;
+            padding: 20px 12px 16px;
+            background: #f1f5f9;
+            border-top: 2px dashed #cbd5e1;
+            border-bottom: 2px dashed #cbd5e1;
             text-align: center;
         }
-        .ad-label {
+        .ad-badge {
+            display: inline-block;
             font-size: 10px;
-            color: #cbd5e1;
+            font-weight: 700;
+            color: #94a3b8;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
+            letter-spacing: 2px;
+            padding: 2px 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .ad-disclaimer {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 8px;
         }
         .ad-desktop { display: none; }
         .ad-mobile { display: block; }
@@ -185,42 +199,43 @@
                 <textarea id="text-preview" class="w-full h-96 p-4 outline-none resize-y text-gray-700 leading-relaxed bg-white font-mono text-sm" spellcheck="false" placeholder=""></textarea>
             </div>
         </div>
-
-        <!-- 底部响应式广告位 -->
-        <div class="ad-container">
-            <div class="ad-label">广告</div>
-            <!-- 桌面版 (≥768px) -->
-            <div class="ad-desktop">
-                <script>
-                  atOptions = {
-                    'key' : '2282acdf37f23377f507eb0b33d12a46',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://bauval.org/22/2282acdf37f23377f507eb0b33d12a46"></script>
-            </div>
-            <!-- 手机版 (<768px) -->
-            <div class="ad-mobile">
-                <script>
-                  atOptions = {
-                    'key' : 'ff6228b2df0f9e4aa35a2ed612d7b05e',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                  };
-                </script>
-                <script src="https://bauval.org/22/ff6228b2df0f9e4aa35a2ed612d7b05e"></script>
-            </div>
-        </div>
     </main>
 
     <footer class="text-center py-6 text-sm text-gray-400">
         <p>${footer}</p>
     </footer>
+
+    <!-- 页脚下方广告位：视觉上完全隔离 -->
+    <div class="ad-container">
+        <span class="ad-badge">AD · ${ad_label_i18n}</span>
+        <!-- 桌面版 (≥768px) -->
+        <div class="ad-desktop">
+            <script>
+              atOptions = {
+                'key' : '2282acdf37f23377f507eb0b33d12a46',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+            </script>
+            <script src="https://bauval.org/22/2282acdf37f23377f507eb0b33d12a46"></script>
+        </div>
+        <!-- 手机版 (<768px) -->
+        <div class="ad-mobile">
+            <script>
+              atOptions = {
+                'key' : 'ff6228b2df0f9e4aa35a2ed612d7b05e',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://bauval.org/22/ff6228b2df0f9e4aa35a2ed612d7b05e"></script>
+        </div>
+        <div class="ad-disclaimer">${ad_disclaimer_i18n}</div>
+    </div>
 
     <div id="toast" class="fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none flex items-center gap-2">
         <i data-lucide="info" class="w-4 h-4"></i>

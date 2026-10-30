@@ -41,5 +41,7 @@
   "hero_subtitle": "SRT, VTT, ASS, SSA, LRC, SBV 등 지원. 모든 변환이 브라우저에서 로컬로 실행됩니다 — 파일 업로드 없음.",
   "badge_free": "100% 무료",
   "badge_nosignup": "회원가입 없음",
-  "badge_private": "개인정보 안전"
+  "badge_private": "개인정보 안전",
+  "ad_label_i18n": "광고",
+  "ad_disclaimer_i18n": "광고 내용은 본 사이트와 무관합니다"
 }

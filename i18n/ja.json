@@ -41,5 +41,7 @@
   "hero_subtitle": "SRT、VTT、ASS、SSA、LRC、SBV など対応。すべてブラウザ内で処理 — ファイルアップロードなし。",
   "badge_free": "完全無料",
   "badge_nosignup": "登録不要",
-  "badge_private": "プライバシー安全"
+  "badge_private": "プライバシー安全",
+  "ad_label_i18n": "広告",
+  "ad_disclaimer_i18n": "広告内容は当サイトとは無関係です"
 }
