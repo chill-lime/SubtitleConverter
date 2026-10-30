@@ -53,41 +53,22 @@
             padding-right: 28px;
         }
 
-        .ad-slot {
-            min-height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f8fafc;
-            border: 1px dashed #e2e8f0;
-            border-radius: 8px;
-            color: #94a3b8;
-            font-size: 12px;
-            margin: 12px 0;
+        .ad-container {
+            margin: 16px 0 8px;
+            text-align: center;
         }
-
-        .ad-sidebar {
-            display: none;
+        .ad-label {
+            font-size: 10px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
         }
-        @media (min-width: 1200px) {
-            .ad-sidebar {
-                display: block;
-                position: fixed;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 160px;
-                z-index: 10;
-                pointer-events: auto;
-            }
-            .ad-sidebar-left { left: 16px; }
-            .ad-sidebar-right { right: 16px; }
-            .ad-sidebar .ad-label {
-                font-size: 11px;
-                color: #94a3b8;
-                text-align: center;
-                margin-top: 6px;
-                letter-spacing: 0.5px;
-            }
+        .ad-desktop { display: none; }
+        .ad-mobile { display: block; }
+        @media (min-width: 768px) {
+            .ad-desktop { display: block; }
+            .ad-mobile { display: none; }
         }
 
         @media (prefers-color-scheme: dark) {
@@ -205,7 +186,36 @@
             </div>
         </div>
 
-        <div class="ad-slot" id="ad-bottom">${ad_slot_label}</div>
+        <!-- 底部响应式广告位 -->
+        <div class="ad-container">
+            <div class="ad-label">广告</div>
+            <!-- 桌面版 (≥768px) -->
+            <div class="ad-desktop">
+                <script>
+                  atOptions = {
+                    'key' : '2282acdf37f23377f507eb0b33d12a46',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bauval.org/22/2282acdf37f23377f507eb0b33d12a46"></script>
+            </div>
+            <!-- 手机版 (<768px) -->
+            <div class="ad-mobile">
+                <script>
+                  atOptions = {
+                    'key' : 'ff6228b2df0f9e4aa35a2ed612d7b05e',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://bauval.org/22/ff6228b2df0f9e4aa35a2ed612d7b05e"></script>
+            </div>
+        </div>
     </main>
 
     <footer class="text-center py-6 text-sm text-gray-400">
@@ -505,17 +515,6 @@
             URL.revokeObjectURL(url);
         });
     </script>
-        <!-- 左侧悬挂广告位（≥1200px 才显示） -->
-        <aside class="ad-sidebar ad-sidebar-left">
-            <div id="ad-sidebar-left"></div>
-            <div class="ad-label">${ad_slot_label}</div>
-        </aside>
-
-        <!-- 右侧悬挂广告位（≥1200px 才显示） -->
-        <aside class="ad-sidebar ad-sidebar-right">
-            <div id="ad-sidebar-right"></div>
-            <div class="ad-label">${ad_slot_label}</div>
-        </aside>
 
 </body>
 </html>
