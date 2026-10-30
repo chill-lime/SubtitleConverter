@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://subtitleconverter.chilllemon29.workers.dev/sitemap.xml
+Sitemap: https://subtitleconverter.vibe-show.com/sitemap.xml

@@ -32,7 +32,7 @@ OG_LOCALE = {
 
 # TODO: 部署到 Cloudflare Pages 后，这里改成你的实际域名
 # 例如: SITE_DOMAIN = "https://subtitle-converter.pages.dev"
-SITE_DOMAIN = "https://subtitleconverter.chilllemon29.workers.dev"
+SITE_DOMAIN = "https://subtitleconverter.vibe-show.com"
 
 
 def load_json(path):

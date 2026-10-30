@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://subtitleconverter.chilllemon29.workers.dev/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://subtitleconverter.chilllemon29.workers.dev/en.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://subtitleconverter.chilllemon29.workers.dev/ja.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://subtitleconverter.chilllemon29.workers.dev/ko.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://subtitleconverter.vibe-show.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://subtitleconverter.vibe-show.com/en.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://subtitleconverter.vibe-show.com/ja.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://subtitleconverter.vibe-show.com/ko.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
 </urlset>
