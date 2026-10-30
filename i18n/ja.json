@@ -1,13 +1,13 @@
 {
   "lang": "ja",
   "dir": "ltr",
-  "title": "字幕フォーマット変換ツール - SRT/VTT/ASS を TXT などに変換",
-  "meta_description": "無料オンライン字幕変換ツール。SRT、VTT、ASS、SSA、LRC、SBV などのフォーマットを相互変換。すべてブラウザ内で処理されるので安全で高速。",
+  "title": "オンライン字幕変換ツール - 完全無料、登録不要、プライバシー安全",
+  "meta_description": "無料オンライン字幕変換ツール。SRT、VTT、ASS、SSA、LRC、SBV 対応。登録不要、ファイルアップロードなし、すべてブラウザ内で処理されます。100% プライベート。",
   "meta_keywords": "SRT を TXT,字幕変換,VTT を SRT,ASS 変換,LRC 変換,オンライン字幕ツール",
-  "og_title": "字幕フォーマット変換ツール - 無料オンラインツール",
+  "og_title": "オンライン字幕変換ツール - 完全無料・安全",
   "og_description": "SRT、VTT、ASS、SSA、LRC、SBV など多様な字幕フォーマットに対応。ファイルはブラウザから出ないのでプライバシー安心。",
   "nav_title": "字幕変換ツール",
-  "nav_sub": "ローカル実行 · マルチフォーマット対応",
+  "nav_sub": "完全無料 · 登録不要 · 安全",
   "panel_format_label": "出力フォーマットを選択：",
   "format_txt": "TXT（プレーンテキスト、タイムスタンプなし）",
   "format_srt": "SRT（標準字幕）",
@@ -36,5 +36,10 @@
   "download_lrc": "LRC をダウンロード",
   "download_sbv": "SBV をダウンロード",
   "lang_switch_label": "言語",
-  "ad_slot_label": "広告"
+  "ad_slot_label": "広告",
+  "hero_title": "オンライン字幕フォーマット変換ツール",
+  "hero_subtitle": "SRT、VTT、ASS、SSA、LRC、SBV など対応。すべてブラウザ内で処理 — ファイルアップロードなし。",
+  "badge_free": "完全無料",
+  "badge_nosignup": "登録不要",
+  "badge_private": "プライバシー安全"
 }

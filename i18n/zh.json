@@ -1,13 +1,13 @@
 {
   "lang": "zh-CN",
   "dir": "ltr",
-  "title": "字幕格式转换器 - SRT/VTT/ASS 互转 TXT/MP3",
-  "meta_description": "免费在线字幕格式转换工具。支持 SRT、VTT、ASS、SSA、LRC、SBV 等格式互转，纯本地运行，安全高效。",
+  "title": "在线字幕格式转换器 - 完全免费、无需注册、隐私安全",
+  "meta_description": "100% 免费在线字幕格式转换器，支持 SRT/VTT/ASS/SSA/LRC/SBV 互转。无需注册、不上传文件、所有转换在浏览器本地完成，绝对隐私安全。",
   "meta_keywords": "SRT转TXT,字幕转换器,VTT转SRT,ASS转TXT,LRC转换器,在线字幕工具",
-  "og_title": "字幕格式转换器 - 免费在线工具",
+  "og_title": "在线字幕格式转换器 - 完全免费、无需注册、隐私安全",
   "og_description": "支持 SRT、VTT、ASS、SSA、LRC、SBV 等多种字幕格式互转，纯前端本地运行，保护隐私。",
   "nav_title": "字幕格式转换器",
-  "nav_sub": "纯本地运行 · 支持多格式互相转换",
+  "nav_sub": "完全免费 · 无需注册 · 隐私安全",
   "panel_format_label": "选择目标转换格式：",
   "format_txt": "TXT (纯文本，去除时间轴)",
   "format_srt": "SRT (标准字幕)",
@@ -36,5 +36,10 @@
   "download_lrc": "下载 LRC",
   "download_sbv": "下载 SBV",
   "lang_switch_label": "语言",
-  "ad_slot_label": "广告位"
+  "ad_slot_label": "广告位",
+  "hero_title": "在线字幕格式转换器",
+  "hero_subtitle": "支持 SRT、VTT、ASS、SSA、LRC、SBV 等多种格式互转，所有转换在浏览器本地完成，绝不上传文件。",
+  "badge_free": "100% 免费",
+  "badge_nosignup": "无需注册",
+  "badge_private": "隐私安全"
 }
