@@ -78,11 +78,17 @@
             color: #94a3b8;
             margin-top: 8px;
         }
-        .ad-desktop { display: none; }
-        .ad-mobile { display: block; }
+        .ad-desktop { display: none; justify-content: center; align-items: center; }
+        .ad-desktop iframe { margin: 0 auto; }
+        .ad-mobile { display: none; justify-content: center; align-items: center; }
+        .ad-mobile iframe { margin: 0 auto; }
         @media (min-width: 768px) {
-            .ad-desktop { display: block; }
+            .ad-desktop { display: flex; }
             .ad-mobile { display: none; }
+        }
+        @media (max-width: 767px) {
+            .ad-desktop { display: none; }
+            .ad-mobile { display: flex; }
         }
 
         @media (prefers-color-scheme: dark) {
